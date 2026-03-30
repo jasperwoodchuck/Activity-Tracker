@@ -15,6 +15,12 @@ export function renderLegends(el: HTMLElement, options: HeatmapOptions) {
 
 	const limits = [...options.limit].sort((a, b) => a - b);
 
+	const cell = legendCellContainer.createEl("div", { cls: "legends-cell" });
+
+	cell.style.backgroundColor = options.color.default;
+
+	setTooltip(cell, `<= ${limits[0]}`, { delay: -1, placement: "top" });
+
 	for (let i = 0; i < colorPalette.length; i++) {
 		const color = colorPalette[i];
 		const cell = legendCellContainer.createEl("div", { cls: "legends-cell" });
@@ -24,10 +30,8 @@ export function renderLegends(el: HTMLElement, options: HeatmapOptions) {
 		if (limits && limits.length > 0) {
 			let tooltip = "";
 
-			if (i === 0) {
-				tooltip = `<=${limits[0]}`;
-			} else if (i === limits.length - 1) {
-				tooltip = `${limits[limits.length - 1]}>=`;
+			if (i === limits.length - 1) {
+				tooltip = `${limits[limits.length - 1]} >=`;
 			} else {
 				tooltip = `${limits[i]} - ${limits[i + 1]}`;
 			}
