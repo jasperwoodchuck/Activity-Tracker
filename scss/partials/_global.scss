@@ -6,12 +6,13 @@
     cursor: pointer;
     border-radius: 4px;
     padding: 16px 20px;
+    user-select: none;
 
     transition: border 100ms ease;
 }
 
 .activity-tracker:hover {
-    border: 1px solid rgba($color: #fff, $alpha: 0.2);
+    border: 1px solid rgba($color: #fff, $alpha: $border-alpha);
 }
 
 .activity-cell {
