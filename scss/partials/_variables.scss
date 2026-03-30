@@ -14,6 +14,8 @@
   --legend-border-radius: ;
   --legend-gap: ;
 
+  --border-alpha: ;
+
   --global-font-size: calc(var(--cell-size) * 0.8);
   --global-padding: calc(var(--cell-size) / 2);
 }
@@ -32,6 +34,8 @@ $legend-alignment: var(--legend-alignment);
 $legend-size: var(--legend-size);
 $legend-br: var(--legend-border-radius);
 $legend-gap: var(--legend-gap);
+
+$border-alpha: var(--border-alpha);
 
 $global-font-size: var(--global-font-size);
 $global-padding: var(--global-padding);

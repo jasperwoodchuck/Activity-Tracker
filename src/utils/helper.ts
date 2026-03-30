@@ -97,6 +97,12 @@ export function setRootProperties(options: HeatmapOptions) {
 	} else {
 		root.style.setProperty("--legend-display", "none");
 	}
+
+	if (options.showBorder) {
+		root.style.setProperty("--border-alpha", "0.2");
+	} else {
+		root.style.setProperty("--border-alpha", "0");
+	}
 }
 
 export function resolvePalette(options: {

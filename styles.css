@@ -11,6 +11,7 @@
   --legend-size: ;
   --legend-border-radius: ;
   --legend-gap: ;
+  --border-alpha: ;
   --global-font-size: calc(var(--cell-size) * 0.8);
   --global-padding: calc(var(--cell-size) / 2);
 }
@@ -20,11 +21,12 @@
   cursor: pointer;
   border-radius: 4px;
   padding: 16px 20px;
+  user-select: none;
   transition: border 100ms ease;
 }
 
 .activity-tracker:hover {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, var(--border-alpha));
 }
 
 .activity-cell {
@@ -88,11 +90,6 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
-
-.ghub-container,
-.ghub-container * {
-  user-select: none;
 }
 
 .ghub-container-weekday {

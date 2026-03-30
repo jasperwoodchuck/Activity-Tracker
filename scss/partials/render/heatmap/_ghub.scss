@@ -7,11 +7,6 @@
     align-items: flex-start;
 }
 
-.ghub-container,
-.ghub-container * {
-    user-select: none;
-}
-
 .ghub-container-weekday {
     @include grid-cell-row;
 
