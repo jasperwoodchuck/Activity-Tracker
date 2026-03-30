@@ -1,0 +1,31 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.activity-container-legends {
+  display: $legend-display;
+  align-items: center;
+  justify-content: $legend-alignment;
+  gap: calc($legend-gap * 2);
+}
+
+.legends-cell-container {
+  display: flex;
+  flex-direction: row;
+  gap: $legend-gap;
+}
+
+.legends-label {
+  font-size: $legend-size;
+}
+
+.legends-cell {
+  width: $legend-size;
+  height: $legend-size;
+  border-radius: $legend-br;
+  
+  transition: all 100ms ease;
+}
+
+.legends-cell:hover {
+  transform: scale(1.2);
+}

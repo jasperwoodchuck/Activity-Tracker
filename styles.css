@@ -49,7 +49,42 @@
   outline: 1px solid white;
 }
 
-.ghub-container {
+.activity-container-title {
+  display: var(--title-display);
+  justify-content: var(--title-alignment);
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+}
+
+.activity-container-legends {
+  display: var(--legend-display);
+  align-items: center;
+  justify-content: var(--legend-alignment);
+  gap: calc(var(--legend-gap) * 2);
+}
+
+.legends-cell-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--legend-gap);
+}
+
+.legends-label {
+  font-size: var(--legend-size);
+}
+
+.legends-cell {
+  width: var(--legend-size);
+  height: var(--legend-size);
+  border-radius: var(--legend-border-radius);
+  transition: all 100ms ease;
+}
+
+.legends-cell:hover {
+  transform: scale(1.2);
+}
+
+.activity-container-ghub {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -75,13 +110,13 @@
 
 .ghub-wrapper-right {
   overflow-x: scroll;
+  padding: var(--global-padding);
 }
 
 .ghub-container-month {
   display: grid;
   gap: var(--cell-gap);
   grid-auto-flow: column;
-  padding: 0px var(--global-padding);
 }
 
 .ghub-month {
@@ -95,14 +130,13 @@
   gap: var(--cell-gap);
   grid-template-rows: repeat(7, var(--cell-size));
   grid-auto-flow: column;
-  padding: var(--global-padding);
+  padding: var(--global-padding) 0px;
 }
 
 .ghub-container-weeknum {
   display: grid;
   gap: var(--cell-gap);
   grid-auto-flow: column;
-  padding: 0px var(--global-padding);
 }
 
 .ghub-weeknum {

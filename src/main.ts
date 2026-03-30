@@ -1,6 +1,8 @@
 import { parseYaml, Plugin } from "obsidian";
 import { renderGhubHeatmap } from "render/heatmap/ghub";
 import { renderYearHeatmap } from "render/heatmap/year";
+import { renderLegends } from "render/legend";
+import { renderHeading } from "render/title";
 import { deepMerge, fetchMarkdownData, setRootProperties } from "utils/helper";
 import { DEFAULT_OPTIONS, type HeatmapOptions } from "utils/options";
 import type { HeatmapData } from "utils/types";
@@ -18,6 +20,8 @@ export default class ActivityTracker extends Plugin {
 
 			const activityTracker = el.createEl("div", { cls: "activity-tracker" });
 
+			renderHeading(activityTracker, optionYaml);
+
 			switch (optionYaml.heatmapType) {
 				case "ghub":
 					renderGhubHeatmap(this.app, activityTracker, this.data, optionYaml);
@@ -27,6 +31,8 @@ export default class ActivityTracker extends Plugin {
 					renderYearHeatmap(this.app, activityTracker, this.data, optionYaml);
 					break;
 			}
+
+			renderLegends(activityTracker, optionYaml);
 		});
 	}
 }

@@ -99,7 +99,7 @@ export function setRootProperties(options: HeatmapOptions) {
 	}
 }
 
-function resolvePalette(options: {
+export function resolvePalette(options: {
 	color: { palette: colorPalette | readonly HexString[] };
 }): readonly HexString[] {
 	return typeof options.color.palette === "string"

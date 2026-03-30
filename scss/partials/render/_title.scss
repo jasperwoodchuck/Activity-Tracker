@@ -1,0 +1,9 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.activity-container-title {
+  display: $title-display;
+  justify-content: $title-alignment;
+  font-size: $title-size;
+  font-weight: $title-weight;
+}
