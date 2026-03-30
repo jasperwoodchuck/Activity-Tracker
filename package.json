@@ -10,7 +10,8 @@
     "format": "biome format src",
     "format:fix": "biome format src --write",
     "lint": "biome lint src",
-    "lint:fix": "biome lint src --write"
+    "lint:fix": "biome lint src --write",
+    "commit": "git add . && git commit"
   },
   "keywords": [],
   "author": "Jasperwoodchuck",
