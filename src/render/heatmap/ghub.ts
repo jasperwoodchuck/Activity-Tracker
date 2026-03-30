@@ -3,6 +3,7 @@ import { Notice, setTooltip, TFile, type App } from "obsidian";
 import type { HeatmapOptions } from "utils/options";
 import type { HeatmapData, weekdayShow, weekdayType } from "utils/types";
 import { Info } from "luxon";
+import { getColor } from "utils/helper";
 
 export function renderGhubHeatmap(
 	app: App,
@@ -55,7 +56,7 @@ export function renderGhubHeatmap(
 
 		cell.dataset.fpath = `${fpath}`;
 
-		cell.style.backgroundColor = "white";
+		cell.style.backgroundColor = getColor(value, options);
 
 		setTooltip(cell, `${cellDateStr} — ${value}`, { delay: -1, placement: "top" });
 

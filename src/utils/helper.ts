@@ -1,6 +1,7 @@
-import type { App } from "obsidian";
+import type { App, HexString } from "obsidian";
 import type { HeatmapOptions } from "./options";
-import type { HeatmapData } from "./types";
+import type { colorPalette, HeatmapData } from "./types";
+import { HEATMAP_THEMES } from "./colors";
 
 export function fetchMarkdownData(app: App, options: HeatmapOptions): HeatmapData {
 	const data: HeatmapData = {};
@@ -96,4 +97,51 @@ export function setRootProperties(options: HeatmapOptions) {
 	} else {
 		root.style.setProperty("--legend-display", "none");
 	}
+}
+
+function resolvePalette(options: {
+	color: { palette: colorPalette | readonly HexString[] };
+}): readonly HexString[] {
+	return typeof options.color.palette === "string"
+		? HEATMAP_THEMES[options.color.palette]
+		: options.color.palette;
+}
+
+export function getColor(value: number, options: HeatmapOptions): HexString {
+	const colorPalette = resolvePalette(options);
+
+	if (!colorPalette || colorPalette.length === 0) {
+		throw new Error("Color palette must contain at least one color.");
+	}
+
+	const limits = [...options.limit].sort((a, b) => a - b);
+
+	if (!limits || limits.length === 0) {
+		return options.color.default;
+	}
+
+	if (colorPalette.length !== limits.length) {
+		throw new Error(
+			`Color palette length (${colorPalette.length}) must match limits length (${limits.length}).`,
+		);
+	}
+
+	if (value < limits[0]) {
+		return options.color.default;
+	}
+
+	if (value >= limits[limits.length - 1]) {
+		return colorPalette[colorPalette.length - 1];
+	}
+
+	for (let i = 0; i < limits.length - 1; i++) {
+		const lower = limits[i];
+		const upper = limits[i + 1];
+
+		if (value >= lower && value < upper) {
+			return colorPalette[i];
+		}
+	}
+
+	return colorPalette[colorPalette.length - 1];
 }
