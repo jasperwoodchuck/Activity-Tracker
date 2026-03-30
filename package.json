@@ -1,5 +1,5 @@
 {
-  "name": "sample-obsidian-plugin",
+  "name": "activity-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -16,10 +16,12 @@
   "author": "Jasperwoodchuck",
   "license": "AGPL-3.0-only",
   "dependencies": {
+    "luxon": "^3.7.2",
     "obsidian": "^1.12.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.9",
+    "@types/luxon": "^3.7.1",
     "esbuild": "^0.27.4",
     "sass": "^1.98.0",
     "typescript": "^6.0.2"

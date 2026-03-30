@@ -1,6 +1,6 @@
 {
-	"id": "obsdiain-sample-plugin",
-	"name": "Obsdiain Sample Plugin",
+	"id": "activity-tracker",
+	"name": "Activity Tracker",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "",
