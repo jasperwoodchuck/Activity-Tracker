@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.activity-tracker {
+    border: 1px solid rgba($color: #fff, $alpha: 0);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 16px 20px;
+
+    transition: border 100ms ease;
+}
+
+.activity-tracker:hover {
+    border: 1px solid rgba($color: #fff, $alpha: 0.2);
+}
+
+.activity-cell {
+    @include cell-size;
+    border-radius: $cell-br;
+
+    transform-origin: center;
+    transition: transform 100ms ease;
+}
+
+.activity-cell-empty {
+    @include cell-size;
+    background-color: transparent;
+}
+
+.activity-cell:hover {
+    transform: scale(1.2);
+}
+
+.today {
+    outline: 1px solid white;
+}

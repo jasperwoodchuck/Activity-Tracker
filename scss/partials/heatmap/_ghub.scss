@@ -1,0 +1,60 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.ghub-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.ghub-container,
+.ghub-container * {
+    user-select: none;
+}
+
+.ghub-container-weekday {
+    @include grid-cell-row;
+
+    padding: calc($global-padding * 3) 0;
+    padding-right: $global-padding;
+}
+
+.ghub-weekday {
+    @include right-text-08;
+}
+
+.ghub-wrapper-right {
+    overflow-x: scroll;
+}
+
+.ghub-container-month {
+    @include grid-cell;
+    grid-auto-flow: column;
+
+    padding: 0px $global-padding;
+}
+
+.ghub-month {
+    height: $cell-size;
+
+    @include center-text-08;
+}
+
+.ghub-container-cells {
+    @include grid-cell-row;
+    grid-auto-flow: column;
+
+    padding: $global-padding;
+}
+
+.ghub-container-weeknum {
+    @include grid-cell;
+    grid-auto-flow: column;
+
+    padding: 0px $global-padding;
+}
+
+.ghub-weeknum {
+    @include cell-size;
+    @include center-text-08;
+}

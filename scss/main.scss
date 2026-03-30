@@ -1,1 +1,4 @@
-@use "partials/variables";
+@use "./partials/variables";
+@use "./partials/global";
+@use "./partials/heatmap/ghub.scss";
+@use "./partials/heatmap/year.scss";
