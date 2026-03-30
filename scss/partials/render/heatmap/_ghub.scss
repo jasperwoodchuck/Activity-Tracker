@@ -1,7 +1,7 @@
-@use "../variables" as *;
-@use "../mixins" as *;
+@use "../../variables" as *;
+@use "../../mixins" as *;
 
-.ghub-container {
+.activity-container-ghub {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -25,13 +25,13 @@
 
 .ghub-wrapper-right {
     overflow-x: scroll;
+
+    padding: $global-padding;
 }
 
 .ghub-container-month {
     @include grid-cell;
     grid-auto-flow: column;
-
-    padding: 0px $global-padding;
 }
 
 .ghub-month {
@@ -44,14 +44,12 @@
     @include grid-cell-row;
     grid-auto-flow: column;
 
-    padding: $global-padding;
+    padding: $global-padding 0px;
 }
 
 .ghub-container-weeknum {
     @include grid-cell;
     grid-auto-flow: column;
-
-    padding: 0px $global-padding;
 }
 
 .ghub-weeknum {

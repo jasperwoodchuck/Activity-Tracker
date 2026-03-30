@@ -11,7 +11,7 @@ export function renderGhubHeatmap(
 	pluginData: HeatmapData,
 	options: HeatmapOptions,
 ) {
-	const ghubContainer = mainContainer.createEl("div", { cls: "ghub-container" });
+	const ghubContainer = mainContainer.createEl("div", { cls: "activity-container-ghub" });
 
 	const weekdayContainer = ghubContainer.createEl("div", { cls: "ghub-container-weekday" });
 	const rightWrapper = ghubContainer.createEl("div", { cls: "ghub-wrapper-right" });

@@ -1,4 +1,6 @@
 @use "./partials/variables";
 @use "./partials/global";
-@use "./partials/heatmap/ghub.scss";
-@use "./partials/heatmap/year.scss";
+@use "./partials/render/title";
+@use "./partials/render/legend";
+@use "./partials/render/heatmap/ghub";
+@use "./partials/render/heatmap/year";
