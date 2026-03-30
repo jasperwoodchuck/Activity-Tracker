@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+@mixin sized-text($alignment, $size) {
+  text-align: $alignment;
+  font-size: $size;
+}
+
+@mixin center-text-08 {
+  @include sized-text(center, $global-font-size)
+}
+
+@mixin right-text-08 {
+  @include sized-text(right, $global-font-size)
+}
+
+@mixin grid-cell {
+  display: grid;
+  gap: $cell-gap;
+}
+
+@mixin grid-cell-row {
+  @include grid-cell();
+  grid-template-rows: repeat(7, $cell-size);
+}
+
+@mixin cell-size {
+  height: $cell-size;
+  width: $cell-size;
+}

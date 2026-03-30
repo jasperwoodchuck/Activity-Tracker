@@ -1,0 +1,37 @@
+:root {
+  --cell-size: ;
+  --cell-border-radius: ;
+  --cell-gap: ;
+
+  --title-display: ;
+  --title-alignment: ;
+  --title-size: ;
+  --title-weight: ;
+
+  --legend-display: ;
+  --legend-alignment: ;
+  --legend-size: ;
+  --legend-border-radius: ;
+  --legend-gap: ;
+
+  --global-font-size: calc(var(--cell-size) * 0.8);
+  --global-padding: calc(var(--cell-size) / 2);
+}
+
+$cell-size: var(--cell-size);
+$cell-br: var(--cell-border-radius);
+$cell-gap: var(--cell-gap);
+
+$title-display: var(--title-display);
+$title-alignment: var(--title-alignment);
+$title-size: var(--title-size);
+$title-weight: var(--title-weight);
+
+$legend-display: var(--legend-display);
+$legend-alignment: var(--legend-alignment);
+$legend-size: var(--legend-size);
+$legend-br: var(--legend-border-radius);
+$legend-gap: var(--legend-gap);
+
+$global-font-size: var(--global-font-size);
+$global-padding: var(--global-padding);

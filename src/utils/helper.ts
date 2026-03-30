@@ -70,3 +70,30 @@ export function deepMerge<T, U>(defaults: T, input: U): DeepMerge<T, U> {
 
 	return result as DeepMerge<T, U>;
 }
+
+export function setRootProperties(options: HeatmapOptions) {
+	const root = document.documentElement;
+
+	root.style.setProperty("--cell-size", `${options.cell.size}px`);
+	root.style.setProperty("--cell-border-radius", `${options.cell.borderRadius}px`);
+	root.style.setProperty("--cell-gap", `${options.cell.gap}px`);
+
+	if (options.title !== "hide") {
+		root.style.setProperty("--title-display", "flex");
+		root.style.setProperty("--title-alignment", options.title.alignment);
+		root.style.setProperty("--title-size", `${options.title.size}px`);
+		root.style.setProperty("--title-weight", `${options.title.weight}`);
+	} else {
+		root.style.setProperty("--title-display", "none");
+	}
+
+	if (options.legends !== "hide") {
+		root.style.setProperty("--legend-display", "flex");
+		root.style.setProperty("--legend-alignment", options.legends.alignment);
+		root.style.setProperty("--legend-size", `${options.legends.size}px`);
+		root.style.setProperty("--legend-border-radius", `${options.legends.borderRadius}px`);
+		root.style.setProperty("--legend-gap", `${options.legends.gap}px`);
+	} else {
+		root.style.setProperty("--legend-display", "none");
+	}
+}

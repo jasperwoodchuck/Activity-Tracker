@@ -1,1 +1,113 @@
+:root {
+  --cell-size: ;
+  --cell-border-radius: ;
+  --cell-gap: ;
+  --title-display: ;
+  --title-alignment: ;
+  --title-size: ;
+  --title-weight: ;
+  --legend-display: ;
+  --legend-alignment: ;
+  --legend-size: ;
+  --legend-border-radius: ;
+  --legend-gap: ;
+  --global-font-size: calc(var(--cell-size) * 0.8);
+  --global-padding: calc(var(--cell-size) / 2);
+}
 
+.activity-tracker {
+  border: 1px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 16px 20px;
+  transition: border 100ms ease;
+}
+
+.activity-tracker:hover {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.activity-cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  border-radius: var(--cell-border-radius);
+  transform-origin: center;
+  transition: transform 100ms ease;
+}
+
+.activity-cell-empty {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  background-color: transparent;
+}
+
+.activity-cell:hover {
+  transform: scale(1.2);
+}
+
+.today {
+  outline: 1px solid white;
+}
+
+.ghub-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ghub-container,
+.ghub-container * {
+  user-select: none;
+}
+
+.ghub-container-weekday {
+  display: grid;
+  gap: var(--cell-gap);
+  grid-template-rows: repeat(7, var(--cell-size));
+  padding: calc(var(--global-padding) * 3) 0;
+  padding-right: var(--global-padding);
+}
+
+.ghub-weekday {
+  text-align: right;
+  font-size: var(--global-font-size);
+}
+
+.ghub-wrapper-right {
+  overflow-x: scroll;
+}
+
+.ghub-container-month {
+  display: grid;
+  gap: var(--cell-gap);
+  grid-auto-flow: column;
+  padding: 0px var(--global-padding);
+}
+
+.ghub-month {
+  height: var(--cell-size);
+  text-align: center;
+  font-size: var(--global-font-size);
+}
+
+.ghub-container-cells {
+  display: grid;
+  gap: var(--cell-gap);
+  grid-template-rows: repeat(7, var(--cell-size));
+  grid-auto-flow: column;
+  padding: var(--global-padding);
+}
+
+.ghub-container-weeknum {
+  display: grid;
+  gap: var(--cell-gap);
+  grid-auto-flow: column;
+  padding: 0px var(--global-padding);
+}
+
+.ghub-weeknum {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  text-align: center;
+  font-size: var(--global-font-size);
+}
