@@ -1,0 +1,27 @@
+{
+  "name": "sample-obsidian-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "node esbuild.config.mjs --production",
+    "watch": "node esbuild.config.mjs",
+    "watch:css": "sass -w --poll scss/main.scss:styles.css --no-source-map",
+    "format": "biome format src",
+    "format:fix": "biome format src --write",
+    "lint": "biome lint src",
+    "lint:fix": "biome lint src --write"
+  },
+  "keywords": [],
+  "author": "Jasperwoodchuck",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "obsidian": "^1.12.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.9",
+    "esbuild": "^0.27.4",
+    "sass": "^1.98.0",
+    "typescript": "^6.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"id": "obsdiain-sample-plugin",
+	"name": "Obsdiain Sample Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "",
+	"author": "Jasperwoodchuck",
+	"authorUrl": "https://www.youtube.com/@jasperwoodchuck",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
