@@ -3,7 +3,7 @@
 	"name": "Activity Tracker",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "",
+	"description": "Customizable activity heatmap with GitHub-style and yearly views",
 	"author": "Jasperwoodchuck",
 	"authorUrl": "https://www.youtube.com/@jasperwoodchuck",
 	"fundingUrl": "",

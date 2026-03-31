@@ -1,7 +1,7 @@
 {
   "name": "activity-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Customizable activity heatmap with GitHub-style and yearly views",
   "main": "main.js",
   "scripts": {
     "build": "node esbuild.config.mjs --production",
