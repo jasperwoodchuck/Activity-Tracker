@@ -5,7 +5,7 @@
     border: 1px solid rgba($color: #fff, $alpha: 0);
     cursor: pointer;
     border-radius: 4px;
-    padding: 16px 20px;
+    padding: $cell-size calc($cell-size * 1.75);
     user-select: none;
 
     transition: border 100ms ease;

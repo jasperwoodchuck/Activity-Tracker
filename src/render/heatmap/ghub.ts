@@ -13,7 +13,10 @@ export function renderGhubHeatmap(
 ) {
 	const ghubContainer = mainContainer.createEl("div", { cls: "activity-container-ghub" });
 
-	const weekdayContainer = ghubContainer.createEl("div", { cls: "ghub-container-weekday" });
+	const leftWrapper = ghubContainer.createEl("div", { cls: "ghub-wrapper-left" });
+
+	const dummyMonthContainer = leftWrapper.createEl("div", { cls: "ghub-container-dummy-months" });
+	const weekdayContainer = leftWrapper.createEl("div", { cls: "ghub-container-weekday" });
 	const rightWrapper = ghubContainer.createEl("div", { cls: "ghub-wrapper-right" });
 
 	const monthContainer = rightWrapper.createEl("div", { cls: "ghub-container-month" });
@@ -76,6 +79,14 @@ export function renderGhubHeatmap(
 
 	renderMonths(monthContainer, weeksPerMonth, options);
 	renderWeeknum(weeknumContainer, weekNumbers);
+
+	if (!options.show.weekday) weekdayContainer.style.display = "none";
+	if (!options.show.weeknum) weeknumContainer.style.display = "none";
+
+	if (!options.show.months) {
+		dummyMonthContainer.style.display = "none";
+		monthContainer.style.display = "none";
+	}
 
 	cellsContainer.addEventListener("click", (el) => {
 		const targetCell = (el.target as HTMLElement).closest(".activity-cell") as HTMLDivElement;

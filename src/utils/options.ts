@@ -24,7 +24,12 @@ export interface HeatmapOptions {
 		type: rangeUnit;
 	};
 	seperateMonths: boolean;
-	showBorder: boolean;
+	show: {
+		border: boolean;
+		weekday: boolean;
+		months: boolean;
+		weeknum: boolean;
+	};
 	title: titleOptions | "hide";
 	cell: {
 		size: number;
@@ -46,7 +51,12 @@ export const DEFAULT_OPTIONS: Partial<HeatmapOptions> = {
 		type: "month",
 	},
 	seperateMonths: false,
-	showBorder: true,
+	show: {
+		border: true,
+		weekday: true,
+		months: true,
+		weeknum: true,
+	},
 	title: {
 		text: "Activity Tracker",
 		alignment: "center",

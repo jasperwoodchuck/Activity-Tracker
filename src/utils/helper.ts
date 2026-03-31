@@ -98,7 +98,7 @@ export function setRootProperties(options: HeatmapOptions) {
 		root.style.setProperty("--legend-display", "none");
 	}
 
-	if (options.showBorder) {
+	if (options.show.border) {
 		root.style.setProperty("--border-alpha", "0.2");
 	} else {
 		root.style.setProperty("--border-alpha", "0");
