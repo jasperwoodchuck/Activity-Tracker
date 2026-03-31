@@ -1,6 +1,6 @@
 {
   "name": "activity-tracker",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Customizable activity heatmap with GitHub-style and yearly views",
   "main": "main.js",
   "scripts": {
