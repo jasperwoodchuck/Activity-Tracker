@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node esbuild.config.mjs --production",
     "watch": "node esbuild.config.mjs",
+    "build:css": "sass scss/main.scss styles.css --no-source-map",
     "watch:css": "sass -w --poll scss/main.scss:styles.css --no-source-map",
     "format": "biome format src",
     "format:fix": "biome format src --write",

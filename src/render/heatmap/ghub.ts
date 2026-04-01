@@ -88,24 +88,7 @@ export function renderGhubHeatmap(
 		monthContainer.style.display = "none";
 	}
 
-	cellsContainer.addEventListener("click", (el) => {
-		const targetCell = (el.target as HTMLElement).closest(".activity-cell") as HTMLDivElement;
-
-		if (!targetCell) return;
-
-		const fpath = targetCell.dataset.fpath;
-
-		if (!fpath) {
-			new Notice("Markdown File doesn't exist");
-			return;
-		}
-
-		const file = app.vault.getAbstractFileByPath(fpath);
-
-		if (file instanceof TFile) {
-			app.workspace.getLeaf().openFile(file);
-		}
-	});
+	addClickEventListeners(app, cellsContainer);
 }
 
 function addEmptyCells(el: HTMLElement, range: number) {
@@ -149,4 +132,25 @@ function renderWeeknum(el: HTMLElement, weekNumbers: number[]) {
 			weeknum.textContent = String(weekNumber).padStart(2, "0");
 		}
 	}
+}
+
+function addClickEventListeners(app: App, container: HTMLElement) {
+	container.addEventListener("click", (el) => {
+		const targetCell = (el.target as HTMLElement).closest(".activity-cell") as HTMLDivElement;
+
+		if (!targetCell) return;
+
+		const fpath = targetCell.dataset.fpath;
+
+		if (!fpath) {
+			new Notice("Markdown File doesn't exist");
+			return;
+		}
+
+		const file = app.vault.getAbstractFileByPath(fpath);
+
+		if (file instanceof TFile) {
+			app.workspace.getLeaf().openFile(file);
+		}
+	});
 }
