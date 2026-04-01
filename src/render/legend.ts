@@ -3,7 +3,7 @@ import { resolvePalette } from "utils/helper";
 import type { HeatmapOptions } from "utils/options";
 
 export function renderLegends(el: HTMLElement, options: HeatmapOptions) {
-	if (options.legends === "hide") return;
+	if (options.legend === "hide") return;
 
 	const legendsContainer = el.createEl("div", { cls: "activity-container-legends" });
 

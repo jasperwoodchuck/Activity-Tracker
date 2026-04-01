@@ -88,20 +88,20 @@ export function setRootProperties(options: HeatmapOptions) {
 		root.style.setProperty("--title-display", "none");
 	}
 
-	if (options.legends !== "hide") {
+	if (options.legend !== "hide") {
 		root.style.setProperty("--legend-display", "flex");
-		root.style.setProperty("--legend-alignment", options.legends.alignment);
-		root.style.setProperty("--legend-size", `${options.legends.size}px`);
-		root.style.setProperty("--legend-border-radius", `${options.legends.borderRadius}px`);
-		root.style.setProperty("--legend-gap", `${options.legends.gap}px`);
+		root.style.setProperty("--legend-alignment", options.legend.alignment);
+		root.style.setProperty("--legend-size", `${options.legend.size}px`);
+		root.style.setProperty("--legend-border-radius", `${options.legend.borderRadius}px`);
+		root.style.setProperty("--legend-gap", `${options.legend.gap}px`);
 	} else {
 		root.style.setProperty("--legend-display", "none");
 	}
 
-	if (options.show.border) {
-		root.style.setProperty("--border-alpha", "0.2");
-	} else {
+	if (options.hideBorder) {
 		root.style.setProperty("--border-alpha", "0");
+	} else {
+		root.style.setProperty("--border-alpha", "0.2");
 	}
 }
 

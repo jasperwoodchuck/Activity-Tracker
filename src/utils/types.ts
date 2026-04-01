@@ -5,6 +5,8 @@ export interface FileEntry {
 
 export type HeatmapData = Record<string, FileEntry>;
 
+export type heatmapType = "ghub" | "year";
+
 export type rangeUnit = "month" | "year";
 export type alignment = "left" | "center" | "right";
 

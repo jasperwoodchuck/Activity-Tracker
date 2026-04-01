@@ -1,5 +1,5 @@
 import type { HexString } from "obsidian";
-import type { alignment, colorPalette, rangeUnit } from "./types";
+import type { alignment, colorPalette, heatmapType, rangeUnit } from "./types";
 
 interface titleOptions {
 	text: string;
@@ -18,14 +18,14 @@ interface legendOptions {
 export interface HeatmapOptions {
 	key: string;
 	folder: string;
-	heatmapType: "ghub" | "year";
+	heatmapType: heatmapType;
 	range: {
 		value: number;
 		type: rangeUnit;
 	};
 	seperateMonths: boolean;
+	hideBorder:boolean;
 	show: {
-		border: boolean;
 		weekday: boolean;
 		months: boolean;
 		weeknum: boolean;
@@ -36,7 +36,7 @@ export interface HeatmapOptions {
 		borderRadius: number;
 		gap: number;
 	};
-	legends: legendOptions | "hide";
+	legend: legendOptions | "hide";
 	color: {
 		palette: HexString[] | colorPalette;
 		default: HexString;
@@ -51,8 +51,8 @@ export const DEFAULT_OPTIONS: Partial<HeatmapOptions> = {
 		type: "month",
 	},
 	seperateMonths: false,
+	hideBorder: false,
 	show: {
-		border: true,
 		weekday: true,
 		months: true,
 		weeknum: true,
@@ -68,7 +68,7 @@ export const DEFAULT_OPTIONS: Partial<HeatmapOptions> = {
 		borderRadius: 3,
 		gap: 3,
 	},
-	legends: {
+	legend: {
 		size: 8,
 		alignment: "right",
 		borderRadius: 2,
