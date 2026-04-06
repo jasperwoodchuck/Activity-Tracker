@@ -1,9 +1,8 @@
-import { DateTime } from "luxon";
+import { DateTime, Info } from "luxon";
 import { Notice, setTooltip, TFile, type App } from "obsidian";
-import type { HeatmapOptions } from "utils/options";
-import type { HeatmapData, weekdayShow, weekdayType } from "utils/types";
-import { Info } from "luxon";
-import { getColor } from "utils/helper";
+import type { HeatmapOptions } from "@utils/options";
+import type { HeatmapData, weekdayShow, weekdayType } from "@utils/types";
+import { getColor } from "@utils/helper";
 
 export function renderGhubHeatmap(
 	app: App,

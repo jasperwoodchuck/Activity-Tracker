@@ -1,6 +1,6 @@
 import { setTooltip } from "obsidian";
-import { resolvePalette } from "utils/helper";
-import type { HeatmapOptions } from "utils/options";
+import { resolvePalette } from "@utils/helper";
+import type { HeatmapOptions } from "@utils/options";
 
 export function renderLegends(el: HTMLElement, options: HeatmapOptions) {
 	if (options.legend === "hide") return;

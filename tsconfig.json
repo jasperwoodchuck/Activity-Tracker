@@ -1,9 +1,13 @@
 {
 	"compilerOptions": {
-		"baseUrl": "src",
 		"target": "ES2018",
 		"module": "ESNext",
-		"moduleResolution": "node10",
+		"moduleResolution": "bundler",
+		"paths" : {
+			"@src/*": ["./src/*"],
+			"@render/*": ["./src/render/*"],
+			"@utils/*": ["./src/utils/*"],
+		},
 		"strict": true,
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
